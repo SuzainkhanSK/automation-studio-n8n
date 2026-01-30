@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BINARY_DATA_MODE=filesystem
+      - N8N_EXECUTIONS_TIMEOUT=0
+      - N8N_EXECUTIONS_TIMEOUT_MAX=0
+      - NODE_ENV=production
+    volumes:
+      - ./n8n_data:/home/node/.n8n
